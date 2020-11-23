@@ -20,6 +20,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </style>
 </head>
   <body>
+    <?php require '../menu.php'; ?><br><br><br>
     <p>Dansk</p>
   </body>
 </html>
