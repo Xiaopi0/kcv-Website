@@ -7,6 +7,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: http://kcv/login.php");
     exit;
 }
+
+require 'mathconf.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,5 +24,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <body>
     <?php require '../menu.php'; ?><br><br><br>
     <p>Matematik</p>
+    <?php
+      if (in_array(htmlspecialchars($_SESSION["username"]), $mathteachers)) {
+        echo "<p>Du er lærer</p>";
+      }
+     ?>
   </body>
 </html>

@@ -7,6 +7,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: http://kcv/login.php");
     exit;
 }
+
+require 'danconf.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,5 +24,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <body>
     <?php require '../menu.php'; ?><br><br><br>
     <p>Dansk</p>
+    <?php
+      if (in_array(htmlspecialchars($_SESSION["username"]), $danteachers)) {
+        echo "<p>Du er lærer</p>";
+      }
+     ?>
   </body>
 </html>
