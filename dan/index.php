@@ -25,7 +25,7 @@ require 'danconf.php';
     <?php require '../menu.php'; ?><br><br><br>
     <p>Dansk</p>
     <?php
-      if (in_array(htmlspecialchars($_SESSION["username"]), $danteachers)) {
+      if ($teach){
         echo "<p>Du er lærer</p>";
       }
      ?>

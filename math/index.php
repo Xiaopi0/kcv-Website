@@ -25,7 +25,7 @@ require 'mathconf.php';
     <?php require '../menu.php'; ?><br><br><br>
     <p>Matematik</p>
     <?php
-      if (in_array(htmlspecialchars($_SESSION["username"]), $mathteachers)) {
+      if ($teach){
         echo "<p>Du er lærer</p>";
       }
      ?>
