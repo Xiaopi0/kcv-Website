@@ -4,11 +4,11 @@ session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: http://kcv/login.php");
+    header("location: http://kcv/");
     exit;
 }
 
-require 'mathconf.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -25,9 +25,7 @@ require 'mathconf.php';
     <?php require '../menu.php'; ?><br><br><br>
     <p>Matematik</p>
     <?php
-      if ($teach){
-        echo "<p>Du er lærer</p>";
-      }
+
      ?>
   </body>
 </html>

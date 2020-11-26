@@ -3,10 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style type="text/css">
+        body{ font: 14px sans-serif; text-align: center; }
+    </style>
   </head>
   <body>
-    <?php
-    header("location: home.php");
-    ?>
+    <p>
+        <a href="loginpupil.php" class="btn btn-warning">Login as pupil</a>
+        <a href="loginteacher.php" class="btn btn-warning">login as teacher</a>
+    </p>
   </body>
 </html>

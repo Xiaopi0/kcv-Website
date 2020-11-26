@@ -3,8 +3,8 @@
 require_once "config.php";
 
 // Define variables and initialize with empty values
-$username = $email = $password = $confirm_password = $teacher ="";
-$username_err = $email_err = $password_err = $confirm_password_err = $teacher_error = "";
+$username = $email = $password = $confirm_password = "";
+$username_err = $email_err = $password_err = $confirm_password_err = "";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["email"]))){
       $email_err = "Please provide an email";
     } else{
-      $sql = "SELECT id FROM users WHERE email = ?";
+      $sql = "SELECT id FROM teachers WHERE email = ?";
 
       if ($stmt = mysqli_prepare($link, $sql)) {
         mysqli_stmt_bind_param($stmt, "s", $param_email);
@@ -34,18 +34,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       }
     }
 
-    if (empty(trim($_POST["teacher"]))) {
-      $teacher = "0";
-    }else {
-      $teacher = trim($_POST["teacher"]);
-    }
-
     // Validate username
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter a username.";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE username = ?";
+        $sql = "SELECT id FROM teachers WHERE username = ?";
 
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -93,25 +87,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // Check input errors before inserting in database
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err) && empty($teacher_error)){
+    if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err)){
 
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, password, email, teacher) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO teachers (username, password, email) VALUES (?, ?, ?)";
 
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssss", $param_username, $param_password, $param_email, $param_teacher);
+            mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_password, $param_email);
 
             // Set parameters
             $param_username = $username;
             $param_email = $email;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            $param_teacher = $teacher;
 
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                header("location: login.php");
+                header("location: loginteacher.php");
             } else{
                 echo "Something went wrong. Please try again later.";
             }
@@ -162,16 +155,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
             </div>
-            <div class="form-group <?php echo (!empty($teacher_error)) ? 'has-error' : ''; ?>">
-                <label>Teacher</label>
-                <input type="text" name="teacher" class="form-control" value="<?php echo $teacher; ?>">
-                <span class="help-block"><?php echo $teacher_error; ?></span>
-            </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Already have an account? <a href="login.php">Login here</a>.</p>
+            <p>Already have an account? <a href="loginpupil.php">Login here(as pupil)</a>.</p>
+            <p>Already have an account? <a href="loginteacher.php">Login here(as as teacher)</a>.</p>
         </form>
     </div>
 </body>
