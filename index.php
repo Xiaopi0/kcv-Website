@@ -12,6 +12,7 @@
     <p>
         <a href="loginpupil.php" class="btn btn-warning">Login as pupil</a>
         <a href="loginteacher.php" class="btn btn-warning">login as teacher</a>
+        <a href="loginparent.php" class="btn btn-warning">login as parent</a>
     </p>
   </body>
 </html>

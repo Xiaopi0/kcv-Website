@@ -161,6 +161,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <p>Already have an account? <a href="loginpupil.php">Login here(as pupil)</a>.</p>
             <p>Already have an account? <a href="loginteacher.php">Login here(as as teacher)</a>.</p>
+            <p>Already have an account? <a href="loginparent.php">Login here(as parent)</a>.</p>
         </form>
     </div>
 </body>
