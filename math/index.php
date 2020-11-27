@@ -25,7 +25,23 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <?php require '../menu.php'; ?><br><br><br>
     <p>Matematik</p>
     <?php
+    switch (htmlspecialchars($_SESSION["acctype"])) {
+      case 'pupil':
+        // code...
+        break;
 
+      case 'teacher':
+
+        break;
+
+      case 'parent':
+
+        break;
+
+      default:
+        header("location: ../index.php");
+        break;
+    }
      ?>
   </body>
 </html>
