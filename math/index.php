@@ -27,15 +27,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <?php
     switch (htmlspecialchars($_SESSION["acctype"])) {
       case 'pupil':
-        // code...
+        echo "Elev";
         break;
 
       case 'teacher':
-
+        echo "Lærer";
         break;
 
       case 'parent':
-
+        echo "Forældre";
         break;
 
       default:
