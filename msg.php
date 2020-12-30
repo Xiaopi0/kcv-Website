@@ -24,8 +24,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         echo "<p>Outbox</p>";
       }elseif ($_GET["t"] == "sendmsg") {
         echo "<p>Send a message</p>";
+      }else {
+        echo "Invalid type";
       }
      ?>
-
   </body>
 </html>

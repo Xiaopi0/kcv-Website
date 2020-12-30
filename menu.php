@@ -33,6 +33,15 @@ text-decoration: none;
   <li>
   <a href="http://kcv/math"> Matematik </a>
   </li>
+  <li>
+  <a href="http://kcv/msg.php?t=in"> Inbox </a>
+  </li>
+  <li>
+  <a href="http://kcv/msg.php?t=out"> Outbox </a>
+  </li>
+  <li>
+  <a href="http://kcv/msg.php?t=sendmsg"> Send besked</a>
+  </li>
   </ul>
   </nav>
 </header>
