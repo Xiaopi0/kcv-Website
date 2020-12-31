@@ -1,0 +1,8 @@
+<!DOCTYPE msgs
+[
+<!ELEMENT msg (to,from,desc,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT desc (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>

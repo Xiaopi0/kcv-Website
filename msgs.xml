@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE msgs SYSTEM "msgs.dtd">
+<msgs>
+  <msg>
+    <to>Erik</to>
+    <from>Erik</from>
+    <desc>FOR TESTING PURPOSES ONLY</desc>
+    <body>testing</body>
+  </msg>
+</msgs>
