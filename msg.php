@@ -19,11 +19,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <?php require 'menu.php'; ?><br><br><br>
     <?php
       if (!isset($_GET["t"]) || $_GET["t"] == "in") {
-        echo "<p>Inbox</p>";
+        require 'msgs/inbox.php';
       }elseif ($_GET["t"] == "out") {
-        echo "<p>Outbox</p>";
+        require 'msgs/outbox.php';
       }elseif ($_GET["t"] == "sendmsg") {
-        echo "<p>Send a message</p>";
+        require 'msgs/sendmsg.php';
       }else {
         echo "Invalid type";
       }

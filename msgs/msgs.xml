@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE msgs SYSTEM "msgs.dtd">
+<msgs>
+  <msg>
+    <id>1</id>
+    <to>Erik</to>
+    <from>Erik</from>
+    <desc>FOR TESTING PURPOSES ONLY</desc>
+    <body>testing</body>
+  </msg>
+  <msg>
+    <id>2</id>
+    <to>Erik</to>
+    <from>Erik2</from>
+    <desc>FOR TESTING PURPOSES ONLY</desc>
+    <body>testing2</body>
+  </msg>
+  <msg>
+    <id>3</id>
+    <to>Erik2</to>
+    <from>Erik</from>
+    <desc>FOR TESTING PURPOSES ONLY</desc>
+    <body>testing3</body>
+  </msg>
+</msgs>

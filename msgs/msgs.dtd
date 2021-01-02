@@ -1,6 +1,7 @@
 <!DOCTYPE msgs
 [
 <!ELEMENT msg (to,from,desc,body)>
+<!#ELEMENT id (#PCDATA)>
 <!ELEMENT to (#PCDATA)>
 <!ELEMENT from (#PCDATA)>
 <!ELEMENT desc (#PCDATA)>

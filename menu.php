@@ -1,4 +1,5 @@
 <style type=text/css>
+body {background-color: #606060;}
 header {
 background-color: #000000;
 position: fixed;
