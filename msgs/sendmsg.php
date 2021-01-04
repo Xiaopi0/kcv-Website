@@ -9,7 +9,7 @@
      <form action="msgs/sender.php" method="get">
        Til: <input type="text" name="to"><br>
        Emne: <input type="text" name="desc"><br>
-       Besked: <input type="text" name="body"><br>
+       Besked: <input type="textbox" name="body"><br>
        <input type="submit">
      </form>
   </body>
