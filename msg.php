@@ -17,6 +17,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   </head>
   <body>
     <?php require 'menu.php'; ?><br><br><br>
+    <h1>USE <a href="discord.com">DISCORD!!!</a></h1>
     <?php
       if (!isset($_GET["t"]) || $_GET["t"] == "in") {
         require 'msgs/inbox.php';
