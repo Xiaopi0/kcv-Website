@@ -2,29 +2,9 @@
 <?xml-stylesheet type="text/xsl" href="msgs.xsl"?>
 <data>
   <info>
-    <id>4</id>
+    <id>0</id>
   </info>
   <msgs>
-    <msg>
-      <id>1</id>
-      <to>Erik</to>
-      <from>Erik</from>
-      <desc>FOR TESTING PURPOSES ONLY</desc>
-      <body>testing</body>
-    </msg>
-    <msg>
-      <id>2</id>
-      <to>Erik</to>
-      <from>Erik2</from>
-      <desc>FOR TESTING PURPOSES ONLY</desc>
-      <body>testing2</body>
-    </msg>
-    <msg>
-      <id>3</id>
-      <to>Erik2</to>
-      <from>Erik</from>
-      <desc>FOR TESTING PURPOSES ONLY</desc>
-      <body>testing3</body>
-    </msg>
-  <msg><id>4</id><to>Erik</to><from>Erik</from><desc>tfsy</desc><body>sfughsdjshfshfjksfhksdfhshfoshushf</body></msg></msgs>
+
+  </msgs>
 </data>
