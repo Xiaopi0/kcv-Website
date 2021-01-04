@@ -7,6 +7,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <html>
   <body>
   <h1>NO!</h1>
+  <p>Total messages: <xsl:value-of select="/data/info/id"/></p>
   </body>
   </html>
 </xsl:template>
