@@ -3,8 +3,8 @@
 require_once "config.php";
 
 // Define variables and initialize with empty values
-$username = $email = $password = $confirm_password = "";
-$username_err = $email_err = $password_err = $confirm_password_err = "";
+$username = $email = $password = $confirm_password = $approval_code = "";
+$username_err = $email_err = $password_err = $confirm_password_err = $approval_code_err = "";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -27,6 +27,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $email_err = "Email already in use.";
           } else {
             $email = trim($_POST["email"]);
+          }
+        } else {
+          echo "Oops! Something went wrong. Please try again later.";
+        }
+      }
+    }
+
+    if(empty(trim($_POST["approvalcode"]))){
+      $approval_code_err = "Please provide an ApprovalCode";
+    } else{
+      $sql = "SELECT XCode FROM approvalcodes WHERE Type = 'pupil'";
+
+      if ($stmt = mysqli_prepare($link, $sql)) {
+        mysqli_stmt_bind_param($stmt, "s", $param_approval_code);
+
+        $param_approval_code = trim($_POST["approvalcode"]);
+
+        if(mysqli_stmt_execute($stmt)){
+
+          mysqli_stmt_store_result($stmt);
+
+          if(!$_POST["approvalcode"] === $stmt){
+            $approval_code_err = "Wrong approvalcode.";
+          } else {
+            $approval_code = trim($_POST["approvalcode"]);
           }
         } else {
           echo "Oops! Something went wrong. Please try again later.";
@@ -154,6 +179,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label>Confirm Password</label>
                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
+            </div>
+            <div class="form-group <?php echo (!empty($approval_code_err)) ? 'has-error' : ''; ?>">
+                <label>Approval Code</label>
+                <input type="text" name="approvalcode" class="form-control" value="<?php echo $approval_code; ?>">
+                <span class="help-block"><?php echo $approval_code_err; ?></span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">

@@ -11,6 +11,10 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 // Include config file
 require_once "config.php";
 
+if(isset($_GET["XCode"])){
+  echo $_GET["XCode"];
+}
+
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";

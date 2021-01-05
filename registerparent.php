@@ -3,8 +3,8 @@
 require_once "config.php";
 
 // Define variables and initialize with empty values
-$username = $email = $password = $confirm_password = "";
-$username_err = $email_err = $password_err = $confirm_password_err = "";
+$username = $email = $password = $confirm_password = $approval_code = "";
+$username_err = $email_err = $password_err = $confirm_password_err = $approval_code_err = "";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -154,6 +154,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label>Confirm Password</label>
                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
+            </div>
+            <div class="form-group <?php echo (!empty($approval_code_err)) ? 'has-error' : ''; ?>">
+                <label>Approval Code</label>
+                <input type="text" name="approvalcode" class="form-control" value="<?php echo $approval_code; ?>">
+                <span class="help-block"><?php echo $approval_code_err; ?></span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
