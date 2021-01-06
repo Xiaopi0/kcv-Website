@@ -35,27 +35,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if(empty(trim($_POST["approvalcode"]))){
-      $approval_code_err = "Please provide an ApprovalCode";
+      $approval_code_err = "Please enter an approvalcode";
     } else{
-      $sql = "SELECT XCode FROM approvalcodes WHERE Type = 'pupil'";
-
-      if ($stmt = mysqli_prepare($link, $sql)) {
-        mysqli_stmt_bind_param($stmt, "s", $param_approval_code);
-
-        $param_approval_code = trim($_POST["approvalcode"]);
-
-        if(mysqli_stmt_execute($stmt)){
-
-          mysqli_stmt_store_result($stmt);
-
-          if(!$_POST["approvalcode"] === $stmt){
-            $approval_code_err = "Wrong approvalcode.";
-          } else {
-            $approval_code = trim($_POST["approvalcode"]);
-          }
-        } else {
-          echo "Oops! Something went wrong. Please try again later.";
-        }
+      $approvalcode = trim($_POST["approvalcode"]);
+      $mysql_approval_code_result = mysql_query('SELECT XCode FROM approvalcodes WHERE Type = "pupil"', $link);
+      if(!$approvalcode == $mysql_approval_code_result){
+        $approval_code_err = "Wrong code";
       }
     }
 
