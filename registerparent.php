@@ -34,6 +34,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       }
     }
 
+    $XCode = "Phdoz3nY!dqlN9L%i3BUXJPTqSGgtKV6MbrSGL@ZSa8p^QzDIv";
+
+    if(empty(trim($_POST["approvalcode"]))){
+      $approval_code_err = "Please enter an approvalcode";
+    } else{
+      $approvalcode = trim($_POST["approvalcode"]);
+      //$mysql_approval_code_result = mysql_query('SELECT XCode FROM approvalcodes WHERE Type = "pupil"', $link);
+      if($approvalcode === $XCode){
+        $approval_code = trim($_POST["approvalcode"]);
+      }else {
+        $approval_code_err = "Wrong code";
+      }
+    }
+
     // Validate username
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter a username.";
@@ -87,7 +101,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // Check input errors before inserting in database
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err)){
+    if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err) && empty($approval_code_err)){
 
         // Prepare an insert statement
         $sql = "INSERT INTO parents (username, password, email) VALUES (?, ?, ?)";
