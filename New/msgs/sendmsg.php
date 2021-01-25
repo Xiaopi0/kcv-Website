@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>WIP</h1>
-     <form action="msgs/sender.php" method="get">
+     <form action="sender.php" method="get">
        Til: <input type="text" name="to"><br>
        Emne: <input type="text" name="desc"><br>
        <p>Besked: </p>

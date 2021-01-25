@@ -26,13 +26,7 @@ text-decoration: none;
   <nav>
   <ul>
   <li>
-  <a href="http://kcv/home.php">Kcv-v - Home </a>
-  </li>
-  <li>
-  <a href="http://kcv/dan"> Dansk </a>
-  </li>
-  <li>
-  <a href="http://kcv/math"> Matematik </a>
+  <a href="http://kcv/Home">Kcv-v - Home </a>
   </li>
   <li>
   <a href="http://kcv/msg.php?t=in"> Inbox </a>
@@ -42,6 +36,9 @@ text-decoration: none;
   </li>
   <li>
   <a href="http://kcv/msg.php?t=sendmsg"> Send besked</a>
+  </li>
+  <li>
+    <p>!!!Out Of Order!!!</p>
   </li>
   </ul>
   </nav>

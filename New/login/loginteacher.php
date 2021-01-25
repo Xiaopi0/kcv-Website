@@ -4,12 +4,12 @@ session_start();
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: home.php");
+    header("location: ../Home");
     exit;
 }
 
 // Include config file
-require_once "config.php";
+require_once "../cfg/config.php";
 
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["acctype"] = "teacher";
 
                             // Redirect user to welcome page
-                            header("location: home.php");
+                            header("location: ../Home");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
@@ -118,9 +118,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            <p>Don't have an account? <a href="registerpupil.php">Sign up now(as pupil)</a>.</p>
-            <p>Don't have an account? <a href="registerteacher.php">Sign up now(as teacher(Not working))</a>.</p>
-            <p>Don't have an account? <a href="registerparent.php">Sign up now(as parent)</a>.</p>
+            <p>Don't have an account? <a href="../register/registerpupil.php">Sign up now(as pupil)</a>.</p>
+            <p>Don't have an account? <a href="../register/registerteacher.php">Sign up now(as teacher(Not working))</a>.</p>
+            <p>Don't have an account? <a href="../register/registerparent.php">Sign up now(as parent)</a>.</p>
         </form>
     </div>
 </body>

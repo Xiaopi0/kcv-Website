@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: index.php");
+    header("location: ../");
     exit;
 }
 ?>
@@ -16,15 +16,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <title></title>
   </head>
   <body>
-    <?php require 'menu.php'; ?><br><br><br>
-    <h1>USE <a href="https:// discord.com">DISCORD!!!</a></h1>
+    <?php require '../menus/menu.php'; ?><br><br><br>
+    <h1>USE <a href="https://discord.com">DISCORD!!!</a></h1>
     <?php
       if (!isset($_GET["t"]) || $_GET["t"] == "in") {
-        require 'msgs/inbox.php';
+        require 'inbox.php';
       }elseif ($_GET["t"] == "out") {
-        require 'msgs/outbox.php';
+        require 'outbox.php';
       }elseif ($_GET["t"] == "sendmsg") {
-        require 'msgs/sendmsg.php';
+        require 'sendmsg.php';
       }else {
         echo "Invalid type";
       }
