@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "config.php";
+require_once "../cfg/config.php";
 
 // Define variables and initialize with empty values
 $username = $email = $password = $confirm_password = $approval_code = "";
@@ -31,6 +31,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         } else {
           echo "Oops! Something went wrong. Please try again later.";
         }
+      }
+    }
+
+    $XCode = "Ne10J&$*V6Vol#llPayQP1cYJW3$*W1*u4RBaLR2n1fB@1iaCL9I";
+
+    if(empty(trim($_POST["approvalcode"]))){
+      $approval_code_err = "Please enter an approvalcode";
+    } else{
+      $approvalcode = trim($_POST["approvalcode"]);
+      //$mysql_approval_code_result = mysql_query('SELECT XCode FROM approvalcodes WHERE Type = "pupil"', $link);
+      if($approvalcode === $XCode){
+        $approval_code = trim($_POST["approvalcode"]);
+      }else {
+        $approval_code_err = "Wrong code";
       }
     }
 
@@ -87,7 +101,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // Check input errors before inserting in database
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err)){
+    if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err) && empty($approval_code_err)){
 
         // Prepare an insert statement
         $sql = "INSERT INTO teachers (username, password, email) VALUES (?, ?, ?)";
@@ -104,7 +118,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                header("location: loginteacher.php");
+                header("location: ../login/loginteacher.php");
             } else{
                 echo "Something went wrong. Please try again later.";
             }
@@ -164,9 +178,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Already have an account? <a href="loginpupil.php">Login here(as pupil)</a>.</p>
-            <p>Already have an account? <a href="loginteacher.php">Login here(as as teacher)</a>.</p>
-            <p>Already have an account? <a href="loginparent.php">Login here(as parent)</a>.</p>
+            <p>Already have an account? <a href="../login/loginpupil.php">Login here(as pupil)</a>.</p>
+            <p>Already have an account? <a href="../login/loginteacher.php">Login here(as as teacher)</a>.</p>
+            <p>Already have an account? <a href="../login/loginparent.php">Login here(as parent)</a>.</p>
         </form>
     </div>
 </body>
