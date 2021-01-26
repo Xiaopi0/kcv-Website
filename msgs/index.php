@@ -14,9 +14,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style type="text/css">
+        body{ font: 14px sans-serif; text-align: center; }
+    </style>
   </head>
   <body>
-    <?php require '../menus/menu.php'; ?><br><br><br>
+    <?php require '../menus/menu.php'; ?>
     <h1>USE <a href="https://discord.com">DISCORD!!!</a></h1>
     <?php
       if (!isset($_GET["t"]) || $_GET["t"] == "in") {

@@ -1,45 +1,22 @@
-<style type=text/css>
-body {background-color: #606060;}
-header {
-background-color: #000000;
-position: fixed;
-left: 0;
-right: 0;
-top: 5px;
-height: 30px;
-display: flex;
-align-items: center;
-box-shadow: 0 0 25px 0 black;
+<link rel="stylesheet" href="../assets/css/menu.css">
+<script charset="utf-8">
+/* Open the sidenav */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
 }
-header * {
-display: inline;
+
+/* Close/hide the sidenav */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
 }
-header li {
-margin: 20px;
-}
-header li a {
-color: blue;
-text-decoration: none;
-}
-</style>
-<header>
-  <nav>
-  <ul>
-  <li>
-  <a href="http://kcv/Home">Kcv-v - Home </a>
-  </li>
-  <li>
-  <a href="http://kcv/msg.php?t=in"> Inbox </a>
-  </li>
-  <li>
-  <a href="http://kcv/msg.php?t=out"> Outbox </a>
-  </li>
-  <li>
-  <a href="http://kcv/msg.php?t=sendmsg"> Send besked</a>
-  </li>
-  <li>
-    <p>!!!Out Of Order!!!</p>
-  </li>
-  </ul>
-  </nav>
-</header>
+</script>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="http://kcv/Home">Hjem</a>
+  <a href="http://kcv/msgs/?t=in">Inbox</a>
+  <a href="http://kcv/msgs/?t=out">Outbox</a>
+  <a href="http://kcv/msgs/?t=sendmsg">Send Besked</a>
+</div>
+
+<!-- Use any element to open the sidenav -->
+<span class="menu" onclick="openNav()"><img src="../assets/images/list.png"></span>
