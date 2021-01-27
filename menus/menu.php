@@ -17,6 +17,7 @@ function closeNav() {
   <a href="http://kcv/msgs/?t=out">Outbox</a>
   <a href="http://kcv/msgs/?t=sendmsg">Send Besked</a>
   <a href="http://kcv/Upload">Upload Fil</a>
+  <a href="http://kcv/Files">Filer</a>
 </div>
 
 <!-- Use any element to open the sidenav -->

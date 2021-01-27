@@ -20,9 +20,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <body>
 <?php require '../menus/menu.php'; ?>
 <form action="upload.php" method="post" enctype="multipart/form-data">
-  Select image to upload:
+  <p>Vælg Fil Til Upload</p>
   <input type="file" name="fileToUpload" id="fileToUpload">
-  <input type="submit" value="Upload Image" name="submit">
+  <input type="submit" value="Upload Fil" name="submit">
 </form>
 
 </body>

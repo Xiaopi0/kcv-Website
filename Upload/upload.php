@@ -34,6 +34,21 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+
+    $xfile = "../Usercontent/Uploads/$user/files.xml";
+
+    $xml = simplexml_load_file($xfile) or die("Error: Cannot create object");
+
+    $files = $xml->files;
+
+    $name = basename($_FILES["fileToUpload"]["name"]);
+
+    $file = $files->addChild('file');
+    $file->addChild('link', "<a href='$target_file'>$name</a>");
+    $file->addChild('name', $name);
+
+    $xml->asXML($xfile);
+
     echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
   } else {
     echo "Sorry, there was an error uploading your file.";
