@@ -44,7 +44,7 @@ if ($uploadOk == 0) {
     $name = basename($_FILES["fileToUpload"]["name"]);
 
     $file = $files->addChild('file');
-    $file->addChild('link', "<a href='$target_file'>$name</a>");
+    $file->addChild('link', "<a href='download.php?path=$target_file'>$name</a>");
     $file->addChild('name', $name);
 
     $xml->asXML($xfile);
