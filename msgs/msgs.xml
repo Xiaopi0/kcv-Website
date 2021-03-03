@@ -2,9 +2,29 @@
 <?xml-stylesheet type="text/xsl" href="msgs.xsl"?>
 <data>
   <info>
-    <id>0</id>
+    <id>4</id>
   </info>
   <msgs>
-    
-  </msgs>
+
+  <msg><id>1</id><to>ShadePi</to><from>ShadePi</from><desc>test</desc><body>&lt;h1&gt;&lt;em&gt;&lt;strong&gt;prhgeoih&lt;/strong&gt;&lt;/em&gt;&lt;strong&gt;fgthfdrtuhjruy&lt;/strong&gt;sterytryseryt&lt;/h1&gt;&#13;
+&lt;blockquote&gt;&#13;
+&lt;p&gt;rthgyyrteytyrty&lt;/p&gt;&#13;
+&lt;/blockquote&gt;&#13;
+&lt;p&gt;stdy&lt;/p&gt;</body></msg><msg><id>2</id><to>ShadePi</to><from>ShadePi</from><desc>Times New Roman</desc><body>&lt;p&gt;&lt;span style="font-family: 'times new roman', times, serif;"&gt;Times New Roman&lt;/span&gt;&lt;/p&gt;</body></msg><msg><id>3</id><to>ShadePi</to><from>ShadePi</from><desc>test3</desc><body>&lt;ul class="tox-checklist"&gt;&#13;
+&lt;li&gt;test&lt;/li&gt;&#13;
+&lt;li&gt;test2&lt;/li&gt;&#13;
+&lt;/ul&gt;&lt;!--tinycomments|2.1|data:application/json;base64,e30=--&gt;</body></msg><msg><id>4</id><to>ShadePi</to><from>ShadePi</from><desc>test</desc><body>&lt;table style="border-collapse: collapse; width: 100%; height: 42px;" border="1"&gt;&#13;
+&lt;tbody&gt;&#13;
+&lt;tr style="height: 21px;"&gt;&#13;
+&lt;td style="width: 32.5673%; height: 21px;"&gt;test&lt;/td&gt;&#13;
+&lt;td style="width: 32.5673%; height: 21px;"&gt;test&lt;/td&gt;&#13;
+&lt;td style="width: 32.6203%; height: 21px;"&gt;test&lt;/td&gt;&#13;
+&lt;/tr&gt;&#13;
+&lt;tr style="height: 21px;"&gt;&#13;
+&lt;td style="width: 32.5673%; height: 21px;"&gt;test&lt;/td&gt;&#13;
+&lt;td style="width: 32.5673%; height: 21px;"&gt;test&lt;/td&gt;&#13;
+&lt;td style="width: 32.6203%; height: 21px;"&gt;test&lt;/td&gt;&#13;
+&lt;/tr&gt;&#13;
+&lt;/tbody&gt;&#13;
+&lt;/table&gt;</body></msg></msgs>
 </data>

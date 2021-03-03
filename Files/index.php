@@ -48,7 +48,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
        echo "<td>" . $id . "</td>";
        echo "<td>" . $files->name . "</td>";
        echo "<td>" . $files->link . "</td>";
-       echo "<td><a href=\"./delete.php?file=" . $files->path . "\">Delete</a>";
+       echo "<td><a href=\"./delete.php?file=" . $files->path . "&name=" . $files['name'] . "\">Delete</a>";
        echo "<tr>";
        $id++;
      }

@@ -44,6 +44,7 @@ if ($uploadOk == 0) {
     $name = basename($_FILES["fileToUpload"]["name"]);
 
     $file = $files->addChild('file');
+    $file['name'] = $name;
     $file->addChild('link', "<a href='download.php?path=$target_file'>$name</a>");
     $file->addChild('name', $name);
     $file->addChild('path', $target_file);
