@@ -1,0 +1,23 @@
+{
+  "name": "kcv.dk",
+  "version": "1.0.0",
+  "description": "kcv.dk website",
+  "main": "index.php",
+  "dependencies": {
+    "google-auth-library": "^7.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xiaopi0/kcv-Website.git"
+  },
+  "author": "Erik Stage",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xiaopi0/kcv-Website/issues"
+  },
+  "homepage": "https://github.com/Xiaopi0/kcv-Website#readme"
+}
